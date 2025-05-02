@@ -1,0 +1,45 @@
+{# Assumes you will use base.html later, or copy the full HTML structure here #}
+{% extends 'base.html' %} {# Use this line if base.html is set up #}
+
+{% block title %}{{ subtopic_name }} - {{ topic_name }} (Kelas {{ grade_level_num }}){% endblock %}
+
+{% block head_extra %}
+    {# Keep the styles for concept-box, question-box etc. if needed for loaded content #}
+    <style>
+        .breadcrumb-item a { color: rgba(255,255,255,0.7); text-decoration: none; }
+        .breadcrumb-item a:hover { color: #fff; text-decoration: underline;}
+        .breadcrumb-item.active { color: #fff; font-weight: bold;}
+        /* Styles for content loaded FROM snippets */
+        .subtopic-content-wrapper .learn-heading { color: #fff; margin-bottom: 1.5rem; font-weight: 500; }
+        .concept-box, .question-box { background-color: #fff; border-radius: 0.5rem; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 3px 7px rgba(0,0,0,0.08); }
+        .concept-box h4, .question-box h4 { color: #198754; margin-bottom: 1rem; font-weight: 600; font-size: 1.2rem; }
+        .concept-box .answer, .question-box .answer { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #eee; }
+        .question-box img { max-width: 100%; height: auto; margin-bottom: 1rem; border-radius: 0.25rem; }
+        .table-place-value th { background-color: #eef8f2; text-align: center; vertical-align: middle; }
+        .table-place-value td { text-align: center; vertical-align: middle; }
+        .placeholder-content-snippet { border: 1px dashed #ccc; } /* Style for placeholder loaded from file */
+    </style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url_for('home') }}">Beranda</a></li>
+            <li class="breadcrumb-item"><a href="{{ url_for('learn_grade', grade_level=grade_level_num) }}">Kelas {{ grade_level_num }}</a></li>
+            <li class="breadcrumb-item">{{ topic_name }}</li>
+            <li class="breadcrumb-item active" aria-current="page">{{ subtopic_name }}</li>
+        </ol>
+    </nav>
+
+    <div class="subtopic-content-wrapper">
+
+        {{ subtopic_content_html | safe }}
+
+    </div> <div class="text-center my-5">
+         <a href="{{ url_for('learn_grade', grade_level=grade_level_num) }}" class="btn btn-secondary">
+            <i class="fas fa-arrow-left me-2"></i> Kembali ke Daftar Topik Kelas {{ grade_level_num }}
+        </a>
+     </div>
+
+</div> {% endblock %}

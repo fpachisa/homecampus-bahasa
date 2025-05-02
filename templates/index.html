@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - Belajar Matematika SD</title> <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark"> <div class="container">
+            <a class="navbar-brand" href="{{ url_for('home') }}"> <img src="{{ url_for('static', filename='/images/home_campus_logo.png') }}" alt="Logo Situs" class="navbar-logo">
+            </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="btn btn-outline-primary me-2" href="#">Masuk</a> </li>
+                        <li class="nav-item">
+                            <a class="btn btn-primary" href="#">Daftar</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero text-center pt-3 pb-3">
+            <div class="container">
+                <h1 class="display-4">Siap Belajar Matematika</h1> <p class="lead">Kuasai Keterampilan Matematika Dasar dalam Pelajaran Singkat</p> </div>
+        </section>
+
+        <section class="grades pt-3 pb-5">
+            <div class="container">
+                <h2 class="text-center mb-4">Pilih Tingkat Kelas</h2> 
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
+
+                    <div class="col">
+                        <div class="card h-100 text-center card-kelas-1"> 
+                            <div class="card-body d-flex flex-column p-4">
+                                <h3 class="card-title">Kelas 3</h3>
+                                <p class="card-text small mt-2 mb-3">
+                                    Topik: Perkalian, Pembagian, Model Nilai Tempat, Soal Cerita, Keliling, Luas, Waktu, Uang, Sudut, Diagram Batang, dan lain-lain...
+                                </p>
+                                <a href="{{ url_for('learn_grade', grade_level=3) }}" class="btn mt-auto">Mulai Belajar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100 text-center card-kelas-2">
+                             <div class="card-body d-flex flex-column p-4">
+                                <h3 class="card-title">Kelas 4</h3>
+                                <p class="card-text small mt-2 mb-3">
+                                    Topik: Faktor, Kelipatan, Pembulatan, Penyederhanaan Pecahan, Grafik, Desimal, Geometri, Bangun Gabungan, dan lain-lain...
+                                </p>
+                                <a href="#" class="btn mt-auto disabled" aria-disabled="true">Mulai Belajar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100 text-center card-kelas-3">
+                             <div class="card-body d-flex flex-column p-4">
+                                <h3 class="card-title">Kelas 5</h3>
+                                <p class="card-text small mt-2 mb-3">
+                                    Topik: Pendekatan, Perkiraan, Soal Cerita Pecahan, Kubus, Balok, Perbandingan, Persentase, Rata-rata, Segitiga, dan lain-lain...
+                                </p>
+                                <a href="#" class="btn mt-auto">Mulai Belajar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100 text-center card-kelas-4">
+                            <div class="card-body d-flex flex-column p-4">
+                                <h3 class="card-title">Kelas 6</h3>
+                                <p class="card-text small mt-2 mb-3">
+                                    Topik: Aljabar, Kecepatan, Keliling dan Luas Lingkaran, Setengah Lingkaran, Kuadran, Menghitung Volume, Diagram Lingkaran, dan lain-lain...
+                                </p>
+                                <a href="#" class="btn mt-auto">Mulai Belajar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pt-4 pb-2 mt-5"> <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>Tautan Cepat</h5> <ul class="list-unstyled">
+                        <li><a href="#">Tentang Kami</a></li> <li><a href="#">Kontak</a></li> <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Legal</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Kebijakan Privasi</a></li> <li><a href="#">Syarat Penggunaan</a></li> </ul>
+                </div>
+                 <div class="col-md-4 mb-3">
+                    </div>
+            </div>
+            <hr>
+            <p class="text-center text-muted small">&copy; {{ current_year }} Homecampus Bahasa. Hak Cipta Dilindungi.</p> </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    </body>
+</html>

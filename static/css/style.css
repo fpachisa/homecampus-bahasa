@@ -1,0 +1,338 @@
+/* static/css/style.css */
+
+body {
+    /* Vibrant green background similar to the reference site */
+    background-color: #1db954; /* Spotify-like Green - Adjust hex code if you have a specific one */
+    color: #333; /* Default dark text color for elements not otherwise styled */
+    min-height: 100vh; /* Ensure body takes at least full viewport height */
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* Allows the main content to grow and push the footer down */
+}
+
+/* Ensure hero section text is clearly visible on the green background */
+.hero h1, .hero p {
+     color: #ffffff; /* White text for hero section */
+     text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* Subtle shadow for readability */
+}
+
+/* Style the grade section title */
+.grades h2 {
+    color: #ffffff; /* White title */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* Subtle shadow */
+    margin-bottom: 2rem !important; /* Standardized Bootstrap spacing (mb-4 is 1.5rem) */
+}
+
+
+/* General styling for grade cards section */
+.grades .card {
+    border: none; /* Remove default Bootstrap card border */
+    color: white; /* Set default text color inside cards to white */
+    border-radius: 0.5rem; /* Slightly rounded corners */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Add subtle hover effects */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Add subtle shadow */
+    overflow: hidden; /* Ensure content respects border-radius */
+}
+
+.grades .card:hover {
+    transform: translateY(-5px); /* Lift card slightly on hover */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.25); /* Increase shadow on hover */
+}
+
+/* Specific background colors for each grade card */
+/* Colors roughly based on screenshot order (Adjust hex codes for exact shades) */
+.card-kelas-1 { background-color: #ff9800; } /* Orange */
+.card-kelas-2 { background-color: #f44336; } /* Red */
+.card-kelas-3 { background-color: #e91e63; } /* Pink/Red */
+.card-kelas-4 { background-color: #2196f3; } /* Blue */
+.card-kelas-5 { background-color: #9c27b0; } /* Purple */
+.card-kelas-6 { background-color: #3f51b5; } /* Indigo (different from purple) */
+
+
+/* Adjust card body structure and padding */
+.grades .card-body {
+    padding: 1.5rem; /* Consistent padding */
+    display: flex; /* Use flexbox for content alignment */
+    flex-direction: column; /* Stack elements vertically */
+    height: 100%; /* Make card body take full height of card */
+}
+
+.grades .card-title {
+    margin-bottom: 0.75rem; /* Space below title */
+    font-size: 1.5rem; /* Larger title */
+}
+
+.grades .card-text {
+    font-size: 0.9rem; /* Slightly smaller text for topics */
+    flex-grow: 1; /* Allow text block to fill available space, pushing button down */
+    margin-bottom: 1.5rem; /* Ensure space above button */
+    opacity: 0.9; /* Slightly less prominent text */
+}
+
+/* Style the button inside the grade cards */
+.grades .card .btn {
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+    border: 1px solid rgba(255, 255, 255, 0.7); /* Slightly more opaque white border */
+    color: white; /* White text */
+    font-weight: bold;
+    margin-top: auto; /* Pushes button to bottom (works with flex-grow on card-text) */
+    transition: background-color 0.2s ease-in-out; /* Smooth transition on hover */
+    text-transform: uppercase; /* Uppercase button text */
+    letter-spacing: 0.5px;
+    padding: 0.5rem 1rem; /* Adjust button padding */
+}
+
+.grades .card .btn:hover {
+    background-color: rgba(255, 255, 255, 0.35); /* Slightly more opaque on hover */
+    color: white; /* Ensure text stays white */
+    border-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Optional: Customize Navbar/Footer background if needed */
+.navbar-logo {
+    height: 40px; /* Adjust this value as needed for your logo's size */
+    width: auto; /* Maintain aspect ratio */
+    vertical-align: middle; /* Align logo nicely with text/buttons */
+}
+
+.navbar {
+    /* Option 1: Transparent background */
+    background-color: #158c42; /* Darker shade of the body green */
+    /* Option 2: Same green as body (uncomment if preferred) */
+    /* background-color: #1db954; */
+    padding-top: 0.75rem; /* Add a bit more padding */
+    padding-bottom: 0.75rem;
+    transition: background-color 0.3s ease; /* Smooth transition if background changes on scroll later */
+}
+
+.navbar .btn-outline-primary {
+    border-color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+}
+.navbar .btn-outline-primary:hover {
+    border-color: #fff;
+    color: #1db954; /* Green text on hover */
+    background-color: #fff; /* White background */
+}
+.navbar .btn-primary {
+     background-color: rgba(255, 255, 255, 0.9);
+     border-color: rgba(255, 255, 255, 0.9);
+     color: #18a24a; /* Slightly darker Green text */
+     font-weight: bold;
+ }
+.navbar .btn-primary:hover {
+     background-color: #fff;
+     border-color: #fff;
+     color: #158c42; /* Even Darker green text */
+ }
+
+  /* Ensure toggler icon (for mobile) is visible */
+  .navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+.navbar-dark .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Footer Styling --- */
+footer {
+    background-color: #158c42; /* Darker shade of the body green */
+    color: rgba(255, 255, 255, 0.75); /* Light text color for footer */
+    margin-top: 3rem; /* Ensure space above footer */
+}
+
+footer h5 {
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+footer ul {
+    padding-left: 0; /* Remove default list padding */
+    list-style: none; /* Remove bullet points */
+}
+
+footer a {
+    color: rgba(255, 255, 255, 0.85); /* Lighter link color */
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+footer a:hover {
+    color: #ffffff; /* White link on hover */
+    text-decoration: underline;
+}
+
+footer hr {
+    border-top: 1px solid rgba(255, 255, 255, 0.15); /* Lighter horizontal rule */
+}
+
+footer .text-muted { /* Target copyright text specifically */
+    color: rgba(255, 255, 255, 0.6) !important; /* Override Bootstrap muted color */
+}
+
+/* --- Grade Learn Page Styles --- */
+
+/* Style the header section above the accordion */
+.page-header {
+    padding: 1.5rem 1.75rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    margin-bottom: 2.5rem !important;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.page-header h1 { font-weight: 500; text-shadow: 1px 1px 3px rgba(0,0,0,0.2); }
+.page-header .lead { opacity: 0.9; font-size: 1.1rem; margin-bottom: 0; }
+
+
+/* --- Colorful Accordion Styling --- */
+
+/* Remove default Bootstrap accordion variables overrides if we set them before */
+/* We'll style elements directly now */
+
+.accordion {
+   /* Remove default borders between items if any linger */
+   --bs-accordion-border-width: 0;
+}
+
+.accordion-item.topic-item {
+    border: none;
+    /* margin-bottom: 1.25rem; */ /* --- REMOVE THIS LINE --- */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    background-color: #fff;
+    display: flex; /* --- ADD THIS --- */
+    flex-direction: column; /* --- ADD THIS --- */
+    /* h-100 class is added in HTML */
+}
+
+/* Add flex-grow to allow the body to expand vertically within the flex container */
+.accordion-item.topic-item .accordion-collapse {
+    flex-grow: 1;
+    display: flex; /* Allow body inside to flex */
+    flex-direction: column;
+}
+
+.accordion-item.topic-item .accordion-body {
+    flex-grow: 1; /* Allow body to fill space */
+    display: flex; /* Allow list group inside to flex */
+    flex-direction: column;
+}
+
+.accordion-item.topic-item .accordion-body .list-group {
+     flex-grow: 1; /* Allow list group to fill body */
+}
+
+.accordion-header {
+     /* Headers don't need specific styles now, button carries the look */
+}
+
+.accordion-button {
+    font-size: 1.3rem; /* Larger topic font */
+    font-weight: 600; /* Bolder */
+    color: white !important; /* Ensure text is white */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    padding: 1.25rem 1.5rem; /* More padding */
+    border-radius: 0 !important; /* Button takes shape of header */
+    align-items: center; /* Vertically align icon and text */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Remove default focus state - handle hover instead */
+.accordion-button:focus {
+    box-shadow: none;
+    /* border-color: transparent; */ /* If borders appear */
+}
+
+/* Remove default arrow */
+.accordion-button::after {
+    display: none;
+}
+
+/* Style when button is collapsed (closed) */
+.accordion-button.collapsed {
+     /* Background color is set by topic-color-* classes */
+     border-bottom-left-radius: 10px !important; /* Round bottom corners when closed */
+     border-bottom-right-radius: 10px !important;
+}
+
+
+/* Style when button is NOT collapsed (open) */
+.accordion-button:not(.collapsed) {
+    /* Keep the same background color when open */
+    /* Optional: Add a subtle inner shadow or border to indicate 'open' */
+     box-shadow: inset 0 -3px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Icon Styling */
+.topic-icon {
+    margin-right: 1rem; /* Space between icon and text */
+    font-size: 1.5rem; /* Make icon larger */
+    width: 30px; /* Fixed width for alignment */
+    text-align: center;
+    opacity: 0.8;
+}
+
+/* --- Color Classes for Accordion Headers --- */
+/* Use the palette from homepage cards */
+.topic-color-1 { background-color: #ff9800; } /* Orange */
+.topic-color-2 { background-color: #f44336; } /* Red */
+.topic-color-3 { background-color: #e91e63; } /* Pink */
+.topic-color-4 { background-color: #2196f3; } /* Blue */
+.topic-color-5 { background-color: #9c27b0; } /* Purple */
+.topic-color-6 { background-color: #3f51b5; } /* Indigo */
+
+/* Hover effect */
+.accordion-button:hover {
+    filter: brightness(110%); /* Slightly brighten on hover */
+}
+
+
+/* Accordion Body & Subtopic List Styling */
+.accordion-body {
+    padding: 0.5rem 0 0.75rem 0; /* Padding top/bottom */
+    background-color: #fff; /* Ensure body bg is white */
+}
+
+.accordion-body .list-group-item {
+    border: none;
+    padding: 0.75rem 1.5rem 0.75rem 2rem; /* Indent subtopics */
+    font-size: 1rem;
+    color: #495057;
+    background-color: transparent; /* Inherit white bg */
+    border-left: 3px solid transparent; /* Prepare for hover border */
+    transition: background-color 0.2s ease, border-left-color 0.2s ease;
+}
+
+.accordion-body .list-group-item.subtopic-link:hover {
+     background-color: #f8f9fa; /* Light grey hover */
+     color: #212529; /* Darker text */
+     border-left-color: #198754; /* Use accent green for left border on hover */
+     cursor: pointer;
+}
+
+.accordion-body .subtopic-link .float-end {
+    color: #adb5bd;
+    transition: transform 0.2s ease;
+    font-size: 1.2em;
+    line-height: 1;
+}
+.accordion-body .subtopic-link:hover .float-end {
+    color: #198754;
+    transform: translateX(5px); /* Move arrow slightly on hover */
+}
+
+/* Ensure last item in body list aligns with rounded corners */
+.accordion-body .list-group {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+}

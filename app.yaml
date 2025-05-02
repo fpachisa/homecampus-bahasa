@@ -1,0 +1,16 @@
+# app.yaml
+runtime: python311 # Specify a supported Python version (e.g., 3.9, 3.10, 3.11, 3.12)
+entrypoint: gunicorn -b :$PORT app:app # How App Engine starts your app (uses Gunicorn)
+
+handlers:
+# Route requests for static files (in the /static directory) directly
+- url: /static
+  static_dir: static
+
+# Route all other requests to your Flask application script
+- url: /.*
+  script: auto
+
+# You can add environment variables here later if needed
+# env_variables:
+#   SECRET_KEY: 'your-secret-key'
