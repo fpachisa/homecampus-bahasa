@@ -29,7 +29,7 @@ grade_3_topics = [
             {"name": "Tabel Perkalian 6, 7, 8, dan 9", "slug": slugify("Tabel Perkalian 6 7 8 9")},
             {"name": "Perkalian", "slug": slugify("Perkalian Bilangan")}, # Added context
             {"name": "Pembagian", "slug": slugify("Pembagian Bilangan")}, # Added context
-            {"name": "Soal Cerita 2 Langkah (Penjumlahan, Pengurangan, Perkalian, Pembagian)", "slug": slugify("Soal Cerita 2 Langkah Bilangan")}
+            {"name": "Soal Cerita 2 Langkah", "slug": slugify("Soal Cerita 2 Langkah Bilangan")}
         ]
     },
     {
